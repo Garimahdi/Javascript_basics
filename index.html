@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('script') // The string data type will be printed in the browser console
+
+        // 1) Making some variable for calculating the area of a field
+        /*
+        This technique is getting abandoned due to possibility to cause confusion.
+        Because it doesn't raise error if there is a problem
+        */
+        var fieldLength = 12;
+        var fieldWidth = 10;
+        // Printing the area calculation in the browser console (string, numberOfcalculation)
+        console.log('Field Area ',fieldLength*fieldWidth)
+
+        // 2) Making some variable using let method
+        let length,width,height,volume;
+        length = 10;
+        width = 12;
+        height = 20;
+        volume = length*width*height;
+        // print the volume calculation
+        console.log('Volume Calculation ',volume)
+
+        // 3) Constant method. Once being written, it cannot be changed. Unlike the let method
+        const pi = 3.14;
+        let radius, areaOfcircle;
+        radius = 2;
+        //pi = 10; this will cause error since the pi constant is already set at 3.14
+        areaOfcircle = pi*radius*radius;
+        console.log('The area of circle ',areaOfcircle)
+    </script>
+
+    <!-- This script below is to show that the js source code can be written in separate .js file and import it to this document-->
+    <script src='importedScript.js'></script>
+</body>
+</html>
