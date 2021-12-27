@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <!--Intro to js-->
     <script>
         console.log('script') // The string data type will be printed in the browser console
 
@@ -40,5 +41,183 @@
 
     <!-- This script below is to show that the js source code can be written in separate .js file and import it to this document-->
     <script src='importedScript.js'></script>
+
+    <!--Learning about js data types and how to convert data type-->
+    <script>
+        // Number data type
+        let sky_height = 10;
+        let sky_height1 = 10.5
+        console.log('sky_height data type: ',typeof sky_height);
+        console.log('sky_height data type: ',typeof sky_height1);
+
+        // String data type
+        let wheelbase = '2000';
+        let car_class = 'compact';
+        let obj1 = 16 + 'Number'; // The number is treated as string when combined with string
+        console.log('wheelbase data type: ', typeof wheelbase);
+        console.log('car_class data type: ',typeof car_class);
+        console.log(obj1);
+        console.log('obj1 data type: ',typeof obj1);
+
+        // Object data type
+        let tanggal = new Date() // the "Date()" function itself has type of string, it's became DATE OBJECT if combined with "new"
+        console.log('Today is: ', tanggal);
+        console.log('tanggal data type: ',typeof tanggal);
+
+        let obj = {
+            car:'I20 wrc',
+            litre:1.6,
+            last_win:2021,
+        };
+        console.log('Desc about Hyundai Motorsport WRT: ', obj);
+        console.log('obj data type: ',typeof obj);
+
+        let ar = [1,2,3.15]; // Even this is a data array, it is still considered as object data type
+        console.log(ar);
+        console.log('ar data type ',typeof ar);
+
+        // Boolean data type
+        let b1 = 5;
+        let b2 = 5;
+        let b3 = 10;
+        console.log(b1 == b2);
+        console.log(b1 == b3);
+        console.log(b1 != b3);
+
+        // Data conversion: string to number
+        let wheelbase_num = Number(wheelbase);
+        console.log(wheelbase_num);
+        console.log('wheelbase_num data type: ',typeof wheelbase_num);
+
+        // Data conversion: number to string
+        let sky_height1_str = String(sky_height1);
+        console.log(sky_height1_str);
+        console.log('sky_height1_str data type: ',typeof sky_height1_str);
+
+        // String to number manipulation
+        let num = '3.14';
+        let num1 = parseFloat(num); // This will convert the "num" var into number without sacrificing the decimal
+        let num2 = parseInt(num); // This will convert the "num" var into number with floor rounding
+        let num3 = parseFloat(num).toFixed(3); // Same like "num1" var, but with 3 numbers behind comma (data type of num3 is string)
+        let num4 = Math.floor(num1); // Floor rounding (check out more @ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
+        let num5 = Math.ceil(num1); // Rounding into 4
+        console.log(num1);
+        console.log('num1 dtype: ',typeof num1);
+        console.log(num2);
+        console.log('num2 dtype: ',typeof num2);
+        console.log(num3);
+        console.log('num3 dtype: ',typeof num3);
+        console.log(num4);
+        console.log('num4 dtype: ',typeof num4);
+        console.log(num5);
+        console.log('num5 dtype: ',typeof num5);
+
+        // Data conversion: Date object to number
+        let dtn = Number(tanggal);
+        console.log('Date-to-number: ',dtn);
+        console.log('dtn dtype: ',typeof dtn);
+        console.log(tanggal.getFullYear());
+
+        // Data conversion: Date object to string
+        let d = new Date();
+        let dts = String(d);
+        console.log('Date(): ',d);
+        console.log(typeof d);
+        console.log('Date-to-string: ',dts);
+        console.log(typeof dts);
+
+        // Data conversion: Boolean to Number
+        let bener = true;
+        let bener_no = Number(bener);
+        console.log('dtype of bener: ',typeof bener);
+        console.log(bener)
+        console.log('dtype of bener_no: ',typeof bener_no);
+        console.log(bener_no);
+
+        // Data conversion: Number to Boolean
+        let salah = 0;
+        let salah_no = Boolean(salah);
+        console.log('dtype of salah: ',typeof salah)
+        console.log(salah);
+        console.log('dtype of salah_no: ',typeof salah_no);
+        console.log(salah_no);
+
+    </script>
+
+    <!--Learning about js operators (some of 'em are similar in python, so not all ops are covered in this script)-->
+    <script>
+        // Increment (++)
+        let before_inc = 5;
+        let after_inc = before_inc;
+        after_inc ++;
+        console.log('After',5,'is',after_inc);
+
+        // Decrement (--)
+        let before_dec = 7;
+        let after_dec = before_dec;
+        after_dec --;
+        console.log('Before',7,'is',after_dec);
+
+        //Assigment and String Ops are pretty much the same as in python//
+
+        // Adding strings and number
+
+        /// Fun fact 1
+        let funFact1 = 5 + '5';
+        console.log(funFact1,'has data type of',typeof funFact1);
+
+        /// Fun fact 2
+        let funFact2 = 10 - '5';
+        console.log(funFact2,'has data type of',typeof funFact2);
+
+        // Comparison operators
+        
+        /// (===) Same in value and data type
+        let value0 = 12, value01 = '12', value02 = 12;
+        console.log("12 and '12' are the same in value and dtype:",value0 === value01);
+        console.log("12 and 12 are just the same in value and dtype",value0 === value02);
+
+        /// (!==) Not same in value and data type
+        console.log("12 and '12' aren't the same in value and dtype:",value0 !== value01);
+        console.log("12 and 12 aren't the same in value and dtype",value0 !== value02);
+
+        /// (?) Ternary operator ("if... else..." loop shortcut)
+        let argument = 17;
+        let argument2 = 19;
+        let conc = (argument > 18) ? 'Greater than 18':'Lower than 18';
+        let conc2 = (argument2 > 18) ? 'Greater than 18':'Lower than 18';
+        console.log(argument,'is',conc);
+        console.log(argument2,'is',conc2);
+
+        // Logical operators
+
+        /// AND (&&)
+        let argument_and1 = 23;
+        let argument_and2 = 12;
+        let and_conc = (argument_and1 === '23') && (argument_and2 < 11);
+        console.log('AND conclusion',and_conc);
+
+        /// OR (||)
+        let argument_or1 = 24;
+        let argument_or2 = 13;
+        let or_conc = argument_or1 == '24' || argument_or2 < 12;
+        console.log('OR conclusion',or_conc);
+
+        /// NOR/NAND (!)
+        let nor1 = 46;
+        let nor2 = 99;
+        let nand1 = 3;
+        let nand2 = 10;
+        let nor_conc = !(nor1 === 46 || nor2 === '99');
+        let nand_conc = !(nand1 >= 10 && nand2 == 10);
+        console.log('NOR conclusion',nor_conc);
+        console.log('NAND conclusion',nand_conc);
+
+    </script>
+
+    <!--Learning about 'if... else if... else...' condition-->
+    <script>
+        
+    </script>
 </body>
 </html>
