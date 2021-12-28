@@ -217,7 +217,88 @@
 
     <!--Learning about 'if... else if... else...' condition-->
     <script>
-        
+        let conditioning = 20;
+
+        // Simple 'if... elif... else' condition
+        if (conditioning == 10){
+            console.log('Ya goddamn fool!');
+        }else if (conditioning < 30){
+            console.log('You smart');
+        }else{
+            console.log("You're hopeless, aren't you?");
+        }
+
+        // Nested if conditioning
+        if (conditioning == 20){
+            if (conditioning < 19){
+                console.log('Smartass');
+            }else if (conditioning%2 === 0){
+                console.log('Not bad');
+            }else{
+                console.log('Humph');
+            }
+    }if (conditioning >= 20){
+            if (conditioning == 20){
+                console.log('Good');
+            }else{
+                console.log('Bad');
+            }
+        }else{
+            console.log('Get out');
+        }
+    </script>
+
+    <!--Learning about 'switch'-->
+    <script>
+        // Simple syntax
+        var swap = new Date().getDay()
+        switch(swap){
+            case 0:
+                day = 'Sun';
+                break;
+            case 1:
+                day = 'Mon';
+                break;
+            case 2:
+                day = 'Tue';
+                break;
+            case 3:
+                day = 'Wed';
+                break;
+            default:
+                day = 'Going into weekend';
+        }
+        console.log(day);
+
+        // Common block
+        let com = 20;
+        switch (true){
+            case (com<10):
+                console.log('FALSE');
+                break;
+            case (com>10):
+            case (com==20):
+            case (com<30):
+                console.log('TRUE');
+                break;
+            default:
+                console.log('UNDECIDED');
+        }
+
+        // What if there is no break?
+        let special_case = 33-3;
+        switch(special_case) {
+            case 30:
+                console.log('Correct');
+            case 40:
+                console.log('Not the one'); // Case 30 will continue until the nearest break
+                break;
+            case 50:
+                console.log('It is 50');
+            case 60:
+                console.log('Too big');
+                break;
+        }
     </script>
 </body>
 </html>
