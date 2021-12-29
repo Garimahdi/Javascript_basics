@@ -181,7 +181,7 @@
         console.log("12 and '12' aren't the same in value and dtype:",value0 !== value01);
         console.log("12 and 12 aren't the same in value and dtype",value0 !== value02);
 
-        /// (?) Ternary operator ("if... else..." loop shortcut)
+        /// (?) Ternary operator ("if... else..." statement shortcut)
         let argument = 17;
         let argument2 = 19;
         let conc = (argument > 18) ? 'Greater than 18':'Lower than 18';
@@ -299,6 +299,74 @@
                 console.log('Too big');
                 break;
         }
+    </script>
+
+    <!--Learning about for loop-->
+    <script>
+        // Simple syntax
+        for(let jarak = 0;jarak <= 100; jarak += 20){
+            console.log('distance',jarak);
+        }
+
+        // Simple syntax: multiple initialization expressions
+        let list_array = ['I20','Yaris','Puma']
+        let ele, ss_len, model;
+        for(ele = 0, ss_len = list_array.length, model = '';ele<ss_len;ele++){
+            model += list_array[ele] + ' ';
+        }
+        console.log(model);
+
+        // Simple syntax: Omitting statements before entering the loop
+        let om = 1;
+        let tarmac = ['Monte','Corse','Catalunya'];
+        let tarmac_length = tarmac.length;
+        let paved = ''
+        for(;om<tarmac_length;om++){
+            paved += tarmac[om] + ' ';
+        }
+        console.log(paved); // Tour de Corse and Rallye Catalunya
+
+        // Simple syntax: Update expression outside the usual place
+        let ue = 1;
+        let gravel = ['Finland','NZ','Acropolis','Sardegna'];
+        let gravel_length = gravel.length;
+        let non_paved = '';
+        for(;ue<gravel_length;){
+            non_paved += gravel[ue] + ' ';
+            ue++;
+        }
+        console.log(non_paved); // Rally NZ, Acropolis & Sardegna only
+
+        // 'for/in' looping (Recommended for looping through object data types)
+        let object_loop = {make:'Lancia',model:'Delta S4',drivetrain:4};
+        for(i in object_loop){
+            let y = object_loop[i];
+            console.log(y);
+        }
+
+        /// 'for/in' looping case 2
+        let object_loop2 = {make:'Nissan',model:'R92CP',turbo:2};
+        let teks = '';
+        for(i in object_loop2){
+            teks += object_loop2[i] + ' ';
+            console.log(teks);
+        }
+        //console.log(teks);
+
+        // Array.forEach() (one of three recommended ways to loop through array data type)
+        let factory = ['Nismo',"TOMS'S",'Mugen','STi'];
+        let factory1 = ''
+        let factory_idx = []
+        let factory_array = ''
+        factory.forEach(function(val,idx,arr){
+            factory1 += val + ' ';
+            factory_idx.push(idx);
+            factory_array += arr + ' ';
+        })
+        console.log(factory1);
+        console.log(factory_idx);
+        console.log(factory_array);
+
     </script>
 </body>
 </html>
