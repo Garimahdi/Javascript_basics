@@ -301,7 +301,7 @@
         }
     </script>
 
-    <!--Learning about for loop-->
+    <!--Learning about 'for' loop-->
     <script>
         // Simple syntax
         for(let jarak = 0;jarak <= 100; jarak += 20){
@@ -335,7 +335,7 @@
             non_paved += gravel[ue] + ' ';
             ue++;
         }
-        console.log(non_paved); // Rally NZ, Acropolis & Sardegna only
+        console.log(non_paved); // Rally NZ, Acropolis & Sardegna onl
 
         // 'for/in' looping (Recommended for looping through object data types)
         let object_loop = {make:'Lancia',model:'Delta S4',drivetrain:4};
@@ -349,9 +349,8 @@
         let teks = '';
         for(i in object_loop2){
             teks += object_loop2[i] + ' ';
-            console.log(teks);
+            console.log(teks); // This will print after 1 cycle of loop, so this shows how the loop prints the values
         }
-        //console.log(teks);
 
         // Array.forEach() (one of three recommended ways to loop through array data type)
         let factory = ['Nismo',"TOMS'S",'Mugen','STi'];
@@ -366,6 +365,52 @@
         console.log(factory1);
         console.log(factory_idx);
         console.log(factory_array);
+
+        // 'for/of' looping (recommended for looping through array and string)
+
+        /// case 1: through array
+        let of1 = ['Lancia','Audi','Peugeot','Ford'];
+        for(b of of1){
+            let y = b + ' | ';
+            console.log(y);
+        }
+
+        /// case 2: through string
+        let of2 = 'Sadamine';
+        let off1 = '';
+        for(i of of2){
+            off1 += i + '-'; // If it is written in (off1 = i + '-'), one log line contains i+'-' (ex: S-)
+            console.log(off1);
+        }
+        console.log(off1); // If combined with (off1 = i + '-'), it will print the last chara in of2 (e-)
+    </script>
+
+    <!--Learning about 'while' loop-->
+    <script>
+        // Simple syntax
+        let wls = 0;
+        while(wls < 10){
+            console.log(wls);
+            wls += 2;
+        }
+
+        // Conditional while (How this works is similar to python, including the "continue/break" statements)
+        let wls1 = 10;
+        while(wls1<16){
+            console.log(wls1)
+            if(wls1 == 14){
+                break;
+            }
+            wls1 += 1
+        }
+
+        // 'do/while' loop
+        let dwl = 30;
+        do{
+            console.log(dwl);
+            dwl += 6;
+        }
+        while(dwl<45);
 
     </script>
 </body>
