@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .hide{
+            display:none;
+        }
+
+        .sini{
+            background-color: brown;
+        }
+    </style>
+
     <title>Document</title>
 </head>
 <body>
@@ -413,5 +424,36 @@
         while(dwl<45);
 
     </script>
+
+    <!--Learning about function-->
+    <script>
+        let a,b;
+        function abc(a,b){
+            let c = (a**2) * (b**2);
+            return c;
+        }
+        console.log(abc(10, 20));
+    </script>
+
+    <!--Learn to copying object-->
+    <script>
+        let oby1 = {'a':1,'b':2};
+        let oby2 = Object.assign({}, oby1);
+        oby2['b'] = 10;
+        console.log(oby1);
+        console.log(oby2);
+    </script>
+
+    <!--Learning about HTML Object-->
+    <div id = testDiv>Testing</div>
+
+    <!--Learning Event in HTML/JS-->
+    <div id = 'testDiv2', class = 'sini'>H</div>
+    <br>
+    <input id = 'tesInput' type = 'text'/>
+    <div id = 'hasilInput'></div>
+    <script src = 'dom.js'></script>
+
+    <script src = 'array.js'></script>
 </body>
 </html>
