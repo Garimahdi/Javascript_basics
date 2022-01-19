@@ -59,6 +59,7 @@ startStop.onclick = function(){
 reset.onclick = function(){
     startTime = new Date().getTime();
     if(!isRunning){
+        elapsedTime = 0
         mins.innerHTML = '00';
         secs.innerHTML = '00';
         ms.innerHTML = '000';
